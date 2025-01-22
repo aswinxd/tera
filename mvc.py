@@ -1,10 +1,6 @@
 import asyncio
 import os
-from pyrogram import Client, filters
 from pyrogram.types import Message
-from pytgcalls import PyTgCalls, StreamType
-from pytgcalls.types.input_stream import AudioPiped
-from yt_dlp import YoutubeDL
 
 
 from pyrogram import Client, filters
