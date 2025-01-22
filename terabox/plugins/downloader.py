@@ -12,7 +12,3 @@ async def process_terabox_link(client, message):
         await message.reply_text(f"Here is your direct download link:\n\n{direct_link}")
     else:
         await message.reply_text("Please send a valid TeraBox link!")
-
-# Run the Bot
-if __name__ == "__main__":
-    app.run()
