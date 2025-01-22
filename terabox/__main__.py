@@ -2,7 +2,7 @@ import asyncio
 import importlib
 from pathlib import Path
 from pyrogram import idle
-from pinterest import LOGGER, app
+from terabox import LOGGER, app
 from .plugins import ALL_MODULES
 from concurrent.futures import ThreadPoolExecutor
 executor = ThreadPoolExecutor(max_workers=200) 
