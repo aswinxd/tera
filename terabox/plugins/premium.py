@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 from pyrogram.types import InputMediaVideo
 from database import get_user
 from terabox import app
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from datetime import datetime, timedelta
+from database import get_user, update_user
 
 @app.on_message(filters.private & filters.text)
 async def process_terabox_link(client, message):
