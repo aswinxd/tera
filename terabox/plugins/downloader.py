@@ -17,27 +17,26 @@ async def process_terabox_link(client, message):
             await message.reply_text(f"Here is your direct download link:\n\n{direct_link}")
         else:
             await message.reply_text(
-                "Your free session has expired. Please get a new session to continue using the bot.",
+                """🚨 Token Expired!
+
+Token Timeout: 12hours 
+
+It looks like your access token has expired. Don't worry—you can easily refresh it to continue using the bot.?
+
+🔑 What is this token?
+
+This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 12 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
+
+👉 Tap the button below to refresh your token and get started instantly. For guidance, check out our step-by-step tutorial.
+
+💡 Why tokens?
+
+Tokens helps to connect your browser on bot to download terabox content""",
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Choose Premium (₹50)", callback_data="choose_premium")],
-                    [InlineKeyboardButton("Recharge Energy", callback_data="recharge_energy")],
-                    [InlineKeyboardButton("What is Energy?", callback_data="what_is_energy")]
+                    [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
+                    [InlineKeyboardButton("What is token help", callback_data="get_token")],
+                    [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
                 ])
             )
     else:
-        await message.reply_text("Please send a valid TeraBox link!")
-
-@app.on_callback_query(filters.regex("choose_premium"))
-async def choose_premium(client, callback_query):
-    await callback_query.answer("Premium purchase is not yet implemented!", show_alert=True)
-
-@app.on_callback_query(filters.regex("recharge_energy"))
-async def recharge_energy(client, callback_query):
-    await callback_query.answer("Energy recharge is not yet implemented!", show_alert=True)
-
-@app.on_callback_query(filters.regex("what_is_energy"))
-async def what_is_energy(client, callback_query):
-    await callback_query.message.edit_text(
-        "Energy is the free session quota you use to generate direct download links. "
-        "You can recharge energy or buy premium to enjoy unlimited access!"
-    )
+        await message.reply_text("The link is invalid or broken bot cant find a terabox content on that link")
