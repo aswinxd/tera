@@ -12,7 +12,6 @@ def update_user(user_id, data):
         {"$set": data}, 
         upsert=True
     )
-
 def get_user(user_id):
     """Fetch a user document by user_id."""
     return users_collection.find_one({"user_id": user_id})
