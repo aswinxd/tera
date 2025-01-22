@@ -22,7 +22,7 @@ async def start_command(client, message):
                     "Congratulations! You referred 5 users and earned 3 hours of free premium access!"
                 )
             if parameter == "free_session":
-                session_expiry = datetime.now() = timedelta(hours=3)
+                session_expiry = datetime.now() + timedelta(hours=3)
                 update_user(user_id, {"session_expiry": session_expiry.timestamp()})
                 await message.reply_text(
                     "Added 3 hour of usage enargy purchase premium for more features"
