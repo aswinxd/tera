@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from pyrogram.types import InputMediaVideo
 from database import get_user
+from terabox import app
 
 @app.on_message(filters.private & filters.text)
 async def process_terabox_link(client, message):
