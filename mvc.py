@@ -10,7 +10,7 @@ API_ID = "22710783"
 API_HASH = "616ea341acfed51f916506c20b8a0a44"
 BOT_TOKEN = "7558230173:AAGVx9CIJGh5QG96sbaSypFhz7e0SsS9jmM"
 SESSION_STRING = "BQGCzhoAKeE4RWl9YaPkNcMeHQEDQQq-ivci5xNDlNMdybqSC7BaaWli0nEU1whOzGh9eQ2rI8Ky8s0nYR6dm7KL48ETsYUucRDWC-lK8YzfSGTabYnO9TtPKqQF25LVxPwhfRoNyomq-zXgiPmqbVnRwRCyojGzQNIhCC-KpKro-CjX5kg7EZtenX-GHSBiQjhy8G6__4DfO7yPDLZv8ZwgZ0jWRHuYcs_f_s05e1p1FwQLI9yDRqty1vMw8yzJDnmJNvzruA8X1zPGYYtgIJn3VCZzeob7EQD6M-GHdetrK1x3la5IzQoILy1lrEXNiaJz-d8i2_KMaGXSRYlTq0gBFvwcDAAAAAFvEOseAA"  # Generate using pyrogram
-bot = Client("music_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+app = Client("music_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 assistant = Client("assistant", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
 pytgcalls = PyTgCalls(assistant)
 
