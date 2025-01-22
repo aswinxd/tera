@@ -9,6 +9,7 @@ async def start_command(client, message):
     referred_by = None
     if len(message.command) > 1:
         referred_by = message.command[1]
+        parameter = message.command[1]
         referrer_data = get_user(int(referred_by))
         if referrer_data:
             referrer_data["referrals"] = referrer_data.get("referrals", 0) + 1
@@ -20,14 +21,15 @@ async def start_command(client, message):
                     int(referred_by),
                     "Congratulations! You referred 5 users and earned 3 hours of free premium access!"
                 )
-
-    # Check if the user already exists
+            if parameter == "free_session":
+                session_expiry = datetime.now() = timedelta(hours=3)
+                update_user(user_id, {"session_expiry": session_expiry.timestamp()})
+                await message.reply_text(
+                    "Added 3 hour of usage enargy purchase premium for more features"
+                )
     user_data = get_user(user_id)
     if not user_data:
-        # New user creation
         update_user(user_id, {"session_expiry": 0, "referrals": 0, "referred_by": referred_by})
-
-    # Standard welcome message
     await message.reply_text(
         "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
         f"Your referral link: https://t.me/{client.me.username}?start={user_id}"
