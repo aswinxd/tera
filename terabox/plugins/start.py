@@ -1,8 +1,5 @@
-from terabox import app
-from pyrogram import Client, filters
-from datetime import datetime, timedelta
-from database import update_user, get_user
 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from terabox import app
 from pyrogram import Client, filters
 from datetime import datetime, timedelta
