@@ -9,6 +9,8 @@ from terabox import app
 @app.on_callback_query()
 async def handle_callback_query(client, callback_query):
     data = callback_query.data
+    user_id = message.from_user.id
+    user = get_user(user_id)
 
     if data == "menu":
         text = """
