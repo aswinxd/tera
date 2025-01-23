@@ -14,7 +14,7 @@ async def handle_callback_query(client, callback_query):
         text = """
 Bot has various features for paid and free users choose and option below to get help
 """,
-        back_button = InlineKeyboardMarkup(
+        buttons = InlineKeyboardMarkup(
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
             [InlineKeyboardButton("What is token help", callback_data="get_token")],
             [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
@@ -51,10 +51,27 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
 4. Wait till you get approved and enjoy using bot
                              """,
             reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton("Pay using upi", callback_data="pay_upi")]],
                 [[InlineKeyboardButton("🔙", callback_data="buy_premium")]]
             ),
             parse_mode=ParseMode.MARKDOWN,
         )
+    elif data == "pay_upi":
+      await callback_query.message.edit_text(
+          """
+**How to pay using upi.**
+
+**Upi Id** = `psaswin70@okaxis`
+
+After payment send screenshot to @Drxew or  [Support Chat](https://t.me/+ejeH2w5gVSAzZmE1)
+We will verify your payment and you will get notified after verification by bot. """,
+    reply_markup=InlineKeyboardMarkup(
+        [[InlineKeyboardButton("🔙", callback_data="premium_steps")]]
+    ),
+    parse_mode=ParseMode.MARKDOWN,
+    )
+      
+      
     elif data == "get_token":
         text = """
  What is this token?
