@@ -15,10 +15,12 @@ async def process_terabox_link(client, message):
             base_url = "https://teradownloader.com/download?w=0&link="
             direct_link = base_url + user_message
             await message.reply_text("Here is your direct download link\n Click below button to get it 👇.",
-                                     reply_markup=InlineKeyboardButton(
-                                         [InlineKeyboardButton("Click here to watch it", url=f"{direct_link}")]
-                                     ),
-                                  )
+                                      reply_markup=InlineKeyboardMarkup(
+                                       [
+                                          [InlineKeyboardButton("Click here to watch it", url=f"{direct_link}")],
+                                       ]
+                                 )
+                           )
         else:
             await message.reply_text(
                 """🚨 Token Expired!
