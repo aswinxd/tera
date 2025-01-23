@@ -14,10 +14,11 @@ async def process_terabox_link(client, message):
         if has_access:
             base_url = "https://teradownloader.com/download?w=0&link="
             direct_link = base_url + user_message
-            await message.reply_text("Here is your direct download link\n Click below button to get it 👇.",
+            await message.reply_text("Here is your direct download link\nClick below button to get it 👇. \nPurchase premium to download videos directly to telegram.",
                                       reply_markup=InlineKeyboardMarkup(
                                        [
                                           [InlineKeyboardButton("Click here to watch it", url=f"{direct_link}")],
+                                          [InlineKeyboardButton("Send it on telegram", callback_data="processing_query")]
                                        ]
                                  )
                            )
@@ -46,3 +47,12 @@ Tokens helps to connect your browser on bot to download terabox content""",
             )
     else:
         await message.reply_text("The link is invalid or broken bot cant find a terabox content on that link")
+
+
+@app.on_callback_query()
+async def handle_callback_query(client, callback_query):
+    data = callback_query.data
+    if data == "processing_query":
+        await callback_query.answer(
+            "Processing query. Available only for premium users.", show_alert=True
+        )
