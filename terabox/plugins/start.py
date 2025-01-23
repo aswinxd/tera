@@ -47,11 +47,12 @@ async def start_command(client, message):
 
     await message.reply_text(
         "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
-        "Refer the bot to 5 users and get free premium access for 3 hours"
-        "Purchase premium for more premium features Click subscribe premium to know about premium features",
+        "Refer the bot to 5 users and get free premium access for 3 hours\n"
+        "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
+        "Refresh token if your token is expired.\n",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
                     [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
-                    [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
+                    [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
                 ])
     )
