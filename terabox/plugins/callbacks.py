@@ -31,7 +31,7 @@ Tokens helps to connect your browser on bot to download terabox content.
         reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
             [InlineKeyboardButton("What is token", callback_data="get_token")],
-            [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
+            [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
         ]
         ),
         parse_mode=ParseMode.MARKDOWN,
@@ -117,7 +117,7 @@ Tokens help us keep the bot free for everyone by supporting operational costs th
         )
     elif data == "referal":
         text = await callback_query.message.edit_text(
-             f"Here is your referal link share it to get free premium trial. \n  click to copy \n  `https://t.me/TeraboxVideoDlRobot?start={user_id}`",
+             f"Here is your referal link share it to get free premium trial.\nclick to copy \n\n`https://t.me/TeraboxVideoDlRobot?start={user_id}`",
 reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("🔙", callback_data="menu")]]
     ),
