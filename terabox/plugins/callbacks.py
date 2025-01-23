@@ -62,11 +62,13 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
       await callback_query.message.edit_text(
           """
 **How to pay using upi.**
-
+**Click to copy upi id**
 **Upi Id** = `psaswin70@okaxis`
 
-After payment send screenshot to @Drxew or  [Support Chat](https://t.me/+ejeH2w5gVSAzZmE1)
-We will verify your payment and you will get notified after verification by bot. """,
+1. Click the given upi id to copy it and paste it on your payment app.
+2. Pay the subscription amount 50 rs.
+3. After payment send screenshot to @Drxew or  [Support Chat](https://t.me/+ejeH2w5gVSAzZmE1)
+4. We will verify your payment and you will get notified after verification by bot. """,
     reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("🔙", callback_data="premium_steps")]]
     ),
