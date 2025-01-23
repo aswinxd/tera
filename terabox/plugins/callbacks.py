@@ -51,11 +51,13 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
 4. Wait till you get approved and enjoy using bot
                              """,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Pay using upi", callback_data="pay_upi")]],
-                [[InlineKeyboardButton("🔙", callback_data="buy_premium")]]
-            ),
-            parse_mode=ParseMode.MARKDOWN,
-        )
+            [
+                [InlineKeyboardButton("Pay using UPI", callback_data="pay_upi")],
+                [InlineKeyboardButton("🔙", callback_data="buy_premium")],
+            ]
+        ),
+        parse_mode=ParseMode.MARKDOWN,
+    )
     elif data == "pay_upi":
       await callback_query.message.edit_text(
           """
@@ -84,8 +86,10 @@ This token is your access pass to the bot's premium features for free.imple ad p
 
 Tokens help us keep the bot free for everyone by supporting operational costs through a quick ad process."""
         back_button = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("video tutorial", url="t.me/howtodownload")]],
-            [[InlineKeyboardButton("🔙", callback_data="menu")]],
+            [
+            [InlineKeyboardButton("video tutorial", url="t.me/howtodownload")],
+            [InlineKeyboardButton("🔙", callback_data="menu")]
+            ]
         )
         await callback_query.message.edit_text(
             text,

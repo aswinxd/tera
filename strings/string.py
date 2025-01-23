@@ -5,7 +5,6 @@ premium_text = (
     "3. No limits on downloading \n"
     "4. enhanced video and audio quaity \n"
     "5. 24x7 Developer support \n"
-    "Contact @Drxew @Drxew or Our [Support Chat](https://t.me/+ejeH2w5gVSAzZmE1) subscribe to premium\n"
-    "Basic Premium starts from 25rs to 50rs."
+    "Click step by step guide to take a brief look at the :)"
 )
 
