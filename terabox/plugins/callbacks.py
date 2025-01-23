@@ -12,7 +12,7 @@ async def handle_callback_query(client, callback_query):
     user_id = callback_query.from_user.id 
 
     if data == "menu":
-        text = """
+        text = await callback_query.message.edit_text("""
 Bot has various features for paid and free users choose and option below to get help
 """,
         buttons = InlineKeyboardMarkup([
@@ -20,6 +20,7 @@ Bot has various features for paid and free users choose and option below to get 
             [InlineKeyboardButton("What is token help", callback_data="get_token")],
             [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
         ]
+        ),
         )
 
     elif data == "buy_premium":
