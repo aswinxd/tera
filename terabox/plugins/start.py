@@ -51,7 +51,7 @@ async def start_command(client, message):
         "Purchase premium for more premium features Click subscribe premium to know about premium features",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
-                    [InlineKeyboardButton("Refer for free premium", url=f"https://t.me/share/url?url=t.me/{client.me.username}?start={user_id}")],
+                    [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
                     [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
                 ])
     )

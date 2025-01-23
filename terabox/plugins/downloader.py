@@ -19,7 +19,7 @@ async def process_terabox_link(client, message):
             await message.reply_text(
                 """🚨 Token Expired!
 
-Token Timeout: 12hours 
+Token Timeout: 3 hours 
 
 It looks like your access token has expired. Don't worry—you can easily refresh it to continue using the bot.?
 
@@ -35,7 +35,7 @@ Tokens helps to connect your browser on bot to download terabox content""",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
                     [InlineKeyboardButton("What is token help", callback_data="get_token")],
-                    [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
+                    [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
                 ])
             )
     else:

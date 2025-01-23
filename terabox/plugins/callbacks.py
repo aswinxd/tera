@@ -17,7 +17,7 @@ Bot has various features for paid and free users choose and option below to get 
         buttons = InlineKeyboardMarkup(
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
             [InlineKeyboardButton("What is token help", callback_data="get_token")],
-            [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
+            [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
         )
 
     elif data == "buy_premium":
@@ -98,3 +98,13 @@ Tokens help us keep the bot free for everyone by supporting operational costs th
             reply_markup=back_button,
             parse_mode=ParseMode.MARKDOWN
         )
+    elif data == "referal":
+        text = await callback_query.message.edit_text(
+             f"Here is your referal link share it to get free premium trial. \n  click to copy `https://t.me/TeraboxVideoDlRobot?start={user_id}`",
+reply_markup=InlineKeyboardMarkup(
+        [[InlineKeyboardButton("🔙", callback_data="menu")]]
+    ),
+    parse_mode=ParseMode.MARKDOWN,
+    )
+
+         
