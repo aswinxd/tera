@@ -14,13 +14,13 @@ async def handle_callback_query(client, callback_query):
     if data == "menu":
         text = await callback_query.message.edit_text(
                               """
-Token Timeout: 3 hours 
+Token Timeout: 24hours 
 
 It looks like your access token has expired. Don't worry—you can easily refresh it to continue using the bot.?
 
 🔑 What is this token?
 
-This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 3 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
+This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 24hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
 
 👉 Tap the button below to refresh your token and get started instantly. For guidance, check out our step-by-step tutorial.
 
@@ -97,7 +97,7 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
         text = """
  What is this token?
 
-This token is your access pass to the bot's premium features for free.imple ad process, you'll unlock 3 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
+This token is your access pass to the bot's premium features for free.imple ad process, you'll unlock 24hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
 
 👉 Tap the button below to refresh your token and get started instantly. For guidance, check out our step-by-step tutorial.
 

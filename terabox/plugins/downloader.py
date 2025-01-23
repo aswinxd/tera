@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime, timedelta
 from database import get_user, update_user
 
-@app.on_message(filters.private & filters.text)
+@app.on_message(filters.text)
 async def process_terabox_link(client, message):
     user_id = message.from_user.id
     user_message = message.text.strip()
@@ -18,7 +18,7 @@ async def process_terabox_link(client, message):
                                       reply_markup=InlineKeyboardMarkup(
                                        [
                                           [InlineKeyboardButton("Click here to watch it", url=f"{direct_link}")],
-                                          [InlineKeyboardButton("Send it on telegram", callback_data="processing_query")]
+                                          [InlineKeyboardButton("Send it on telegram", callback_data="buy_premium")]
                                        ]
                                  )
                            )
@@ -26,13 +26,13 @@ async def process_terabox_link(client, message):
             await message.reply_text(
                 """🚨 Token Expired!
 
-Token Timeout: 3 hours 
+Token Timeout: 24hours 
 
 It looks like your access token has expired. Don't worry—you can easily refresh it to continue using the bot.?
 
 🔑 What is this token?
 
-This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 3 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
+This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 24hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
 
 👉 Tap the button below to refresh your token and get started instantly. For guidance, check out our step-by-step tutorial.
 
@@ -40,8 +40,6 @@ This token is your access pass to the bot's premium features. By completing a si
 
 Tokens helps to connect your browser on bot to download terabox content""",
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
-                    [InlineKeyboardButton("What is token", callback_data="get_token")],
                     [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
                 ])
             )
