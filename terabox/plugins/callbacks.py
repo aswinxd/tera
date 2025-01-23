@@ -7,7 +7,7 @@ import html
 from strings.string import premium_text
 from terabox import app
 @app.on_callback_query()
-async def handle_callback_query(client, callback_quer):
+async def handle_callback_query(client, callback_query):
     data = callback_query.data
     user_id = callback_query.from_user.id
     user = get_user(user_id) 
