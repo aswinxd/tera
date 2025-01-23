@@ -12,15 +12,17 @@ async def handle_callback_query(client, callback_query):
     user_id = callback_query.from_user.id 
 
     if data == "menu":
-        text = await callback_query.message.edit_text("""
+        text = await callback_query.message.edit_text(
+                       """
 Bot has various features for paid and free users choose and option below to get help
 """,
-        buttons = InlineKeyboardMarkup([
+        reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
             [InlineKeyboardButton("What is token help", callback_data="get_token")],
             [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
         ]
         ),
+        parse_mode=ParseMode.MARKDOWN,
         )
 
     elif data == "buy_premium":
