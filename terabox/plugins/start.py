@@ -7,7 +7,7 @@ from database import update_user, get_user
 from pyrogram.enums import ParseMode
 
 @app.on_message(filters.command("start") & filters.private)
-async def start_command(client, message):
+async def start_command(client, message, callback_query):
     user_id = message.from_user.id
     referred_by = None
 
