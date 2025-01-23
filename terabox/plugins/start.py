@@ -14,13 +14,13 @@ async def start_command(client, message):
         referred_by = message.command[1]
         parameter = message.command[1]
 
-        if referred_by.isdigit(): 
+        if referred_by.isdigit():  # Check if referral is a valid user ID
             referrer_data = get_user(int(referred_by))
             if referrer_data:
                 referrer_data["referrals"] = referrer_data.get("referrals", 0) + 1
                 update_user(int(referred_by), {"referrals": referrer_data["referrals"]})
 
-                if referrer_data["referrals"] >= 5:
+                if referrer_data["referrals"] >= 5:  # Check if referrals reach the threshold
                     new_expiry = datetime.now() + timedelta(hours=3)
                     update_user(int(referred_by), {"session_expiry": new_expiry.timestamp(), "referrals": 0})
                     await client.send_message(
@@ -30,29 +30,48 @@ async def start_command(client, message):
                             [InlineKeyboardButton("Subscribe to premium", callback_data="buy_premium")]
                         ])
                     )
-        elif parameter == "free_session": 
+        elif parameter == "free_session":  # Handle free session via special parameter
             session_expiry = datetime.now() + timedelta(hours=3)
             update_user(user_id, {"session_expiry": session_expiry.timestamp()})
             await message.reply_text(
                 "Added 3 hours of usage token! subscribe to premium on just 50 rs for more features.",
                 reply_markup=InlineKeyboardMarkup([
-                            [InlineKeyboardButton("Subscribe to premium", callback_data="buy_premium")]
-                        ])
+                    [InlineKeyboardButton("Subscribe to premium", callback_data="buy_premium")]
+                ])
             )
 
-    
     user_data = get_user(user_id)
     if not user_data:
+        # Initialize user data if not present
         update_user(user_id, {"session_expiry": 0, "referrals": 0, "referred_by": referred_by})
 
-    await message.reply_text(
-        "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
-        "Refer the bot to 5 users and get free premium access for 3 hours\n"
-        "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
-        "Refresh token if your token is expired.\n",
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
-                    [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
-                    [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
-                ])
-    )
+    # Check if session is still active
+    current_time = datetime.now().timestamp()
+    if user_data and user_data.get("session_expiry", 0) > current_time:
+        remaining_time = user_data["session_expiry"] - current_time
+        await message.reply_text(
+            f"Hi! You have an active session with {int(remaining_time // 60)} minutes remaining.\n"
+            "Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
+            "Refer the bot to 5 users and get free premium access for 3 hours\n"
+            "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
+            "Refresh token if your token is expired.\n",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
+                [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
+                [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
+            ])
+        )
+    else:
+        # Notify the user that their session has expired
+        await message.reply_text(
+            "Hi! Your free session has expired. Refer more users or purchase premium to continue.\n\n"
+            "Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
+            "Refer the bot to 5 users and get free premium access for 3 hours\n"
+            "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
+            "Refresh token if your token is expired.\n",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
+                [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
+                [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
+            ])
+        )
