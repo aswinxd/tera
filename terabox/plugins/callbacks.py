@@ -4,12 +4,23 @@ from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ParseMode
 import html
+from strings.string import premium_text
 from terabox import app
 @app.on_callback_query()
 async def handle_callback_query(client, callback_query):
     data = callback_query.data
 
-    if data == "buy_premium":
+    if data == "menu":
+        text = """
+Bot has various features for paid and free users choose and option below to get help
+""",
+        back_button = InlineKeyboardMarkup(
+            [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
+            [InlineKeyboardButton("What is token help", callback_data="get_token")],
+            [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
+        )
+
+    elif data == "buy_premium":
         buttons = [
             [InlineKeyboardButton("Step-by-Step Guide", callback_data="premium_steps")],
             [InlineKeyboardButton("🔙", callback_data="menu")],
