@@ -1,16 +1,16 @@
 import asyncio
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters, enums 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ParseMode
 import html
 from strings.string import premium_text
 from terabox import app
 @app.on_callback_query()
-async def handle_callback_query(client, callback_query):
+async def handle_callback_query(client, callback_quer):
     data = callback_query.data
-    user_id = message.from_user.id
-    user = get_user(user_id)
+    user_id = callback_query.from_user.id
+    user = get_user(user_id) 
 
     if data == "menu":
         text = """
