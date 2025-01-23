@@ -46,7 +46,7 @@ async def start_command(client, message):
     if not user_data:
         update_user(user_id, {"session_expiry": 0, "referrals": 0, "referred_by": referred_by})
 
-    await message.reply_text(
+    await message.reply_text( await callback_query.message.edit_text (
         "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
         "Refer the bot to 5 users and get free premium access for 3 hours\n"
         "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
@@ -57,5 +57,6 @@ async def start_command(client, message):
                     [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
                     [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
                 ])
+    ),
+parse_mode=ParseMode.MARKDOWN,
     )
-parse_mode=ParseMode.MARKDOWN
