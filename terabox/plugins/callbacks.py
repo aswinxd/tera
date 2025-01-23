@@ -13,8 +13,20 @@ async def handle_callback_query(client, callback_query):
 
     if data == "menu":
         text = await callback_query.message.edit_text(
-                       """
-Bot has various features for paid and free users choose and option below to get help
+                              """
+Token Timeout: 3 hours 
+
+It looks like your access token has expired. Don't worry—you can easily refresh it to continue using the bot.?
+
+🔑 What is this token?
+
+This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 12 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
+
+👉 Tap the button below to refresh your token and get started instantly. For guidance, check out our step-by-step tutorial.
+
+💡 Why tokens?
+
+Tokens helps to connect your browser on bot to download terabox content.
 """,
         reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
@@ -94,7 +106,7 @@ This token is your access pass to the bot's premium features for free.imple ad p
 Tokens help us keep the bot free for everyone by supporting operational costs through a quick ad process."""
         back_button = InlineKeyboardMarkup(
             [
-            [InlineKeyboardButton("video tutorial", url="t.me/howtodownload")],
+            [InlineKeyboardButton("video tutorial", url="https://t.me/TeraboxHelpChannel/2")],
             [InlineKeyboardButton("🔙", callback_data="menu")]
             ]
         )
