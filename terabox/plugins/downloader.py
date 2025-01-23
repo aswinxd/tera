@@ -10,7 +10,7 @@ async def process_terabox_link(client, message):
     user_message = message.text.strip()
     user = get_user(user_id)
     has_access = user and (datetime.now().timestamp() < user.get("session_expiry", 0) or user.get("is_premium", False))
-    if "teraboxapp.com" in user_message:
+    if ".com" in user_message:
         if has_access:
             base_url = "https://teradownloader.com/download?w=0&link="
             direct_link = base_url + user_message
