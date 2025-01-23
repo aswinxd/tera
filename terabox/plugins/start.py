@@ -52,6 +52,6 @@ async def start_command(client, message):
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
                     [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
-                    [InlineKeyboardButton("Get token", url="https://t.me/TeraboxVideoDlRobot?start=free_session")]
+                    [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
                 ])
     )

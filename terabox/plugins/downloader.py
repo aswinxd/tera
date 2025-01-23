@@ -35,7 +35,7 @@ Tokens helps to connect your browser on bot to download terabox content""",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
                     [InlineKeyboardButton("What is token help", callback_data="get_token")],
-                    [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
+                    [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
                 ])
             )
     else:

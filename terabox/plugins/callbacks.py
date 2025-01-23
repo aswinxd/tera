@@ -105,7 +105,7 @@ Tokens help us keep the bot free for everyone by supporting operational costs th
         )
     elif data == "referal":
         text = await callback_query.message.edit_text(
-             f"Here is your referal link share it to get free premium trial. \n  click to copy `https://t.me/TeraboxVideoDlRobot?start={user_id}`",
+             f"Here is your referal link share it to get free premium trial. \n  click to copy \n  `https://t.me/TeraboxVideoDlRobot?start={user_id}`",
 reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("🔙", callback_data="menu")]]
     ),
