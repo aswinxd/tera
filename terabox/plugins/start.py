@@ -7,7 +7,7 @@ from database import update_user, get_user
 from pyrogram.enums import ParseMode
 
 @app.on_message(filters.command("start") & filters.private)
-async def start_command(client, message, callback_query):
+async def start_command(client, message):
     user_id = message.from_user.id
     referred_by = None
 
@@ -46,17 +46,17 @@ async def start_command(client, message, callback_query):
     if not user_data:
         update_user(user_id, {"session_expiry": 0, "referrals": 0, "referred_by": referred_by})
 
-    await message.reply_text( await callback_query.message.edit_text (
-        "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
-        "Refer the bot to 5 users and get free premium access for 3 hours\n"
-        "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
-        "Refresh token if your token is expired.\n"
-        "Report issues at [support chat](https://t.me/+I7lL7lVhDGAzMjVl)",
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
-                    [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
-                    [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
-                ])
-    ),
-parse_mode=ParseMode.MARKDOWN,
-    )
+    await message.reply_text(
+    "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
+    "Refer the bot to 5 users and get free premium access for 3 hours\n"
+    "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
+    "Refresh token if your token is expired.\n"
+    "Report issues at [support chat](https://t.me/+I7lL7lVhDGAzMjVl)",
+    reply_markup=InlineKeyboardMarkup([
+        [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
+        [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
+        [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
+    ]),
+    parse_mode=ParseMode.MARKDOWN
+)
+
