@@ -15,10 +15,11 @@ async def handle_callback_query(client, callback_query):
         text = """
 Bot has various features for paid and free users choose and option below to get help
 """,
-        buttons = InlineKeyboardMarkup(
+        buttons = InlineKeyboardMarkup([
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
             [InlineKeyboardButton("What is token help", callback_data="get_token")],
             [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
+        ]
         )
 
     elif data == "buy_premium":
