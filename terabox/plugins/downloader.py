@@ -32,7 +32,7 @@ It looks like your access token has expired. Don't worry—you can easily refres
 
 🔑 What is this token?
 
-This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 12 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
+This token is your access pass to the bot's premium features. By completing a simple ad process, you'll unlock 3 hours of uninterrupted access to all services. No hidden fees, no catches—just seamless functionality! 🌟
 
 👉 Tap the button below to refresh your token and get started instantly. For guidance, check out our step-by-step tutorial.
 
@@ -50,7 +50,7 @@ Tokens helps to connect your browser on bot to download terabox content""",
 
 
 @app.on_callback_query()
-async def handle_callback_query(client, callback_query):
+async def hle_callback_query(client, callback_query):
     data = callback_query.data
     if data == "processing_query":
         await callback_query.answer(
