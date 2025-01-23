@@ -21,7 +21,7 @@ async def start_command(client, message):
                 update_user(int(referred_by), {"referrals": referrer_data["referrals"]})
 
                 if referrer_data["referrals"] >= 5:
-                    new_expiry = datetime.now() + timedelta(minutes=1)
+                    new_expiry = datetime.now() + timedelta(hours=3)
                     update_user(int(referred_by), {"session_expiry": new_expiry.timestamp(), "referrals": 0})
                     await client.send_message(
                         int(referred_by),
@@ -31,7 +31,7 @@ async def start_command(client, message):
                         ])
                     )
         elif parameter == "free_session": 
-            session_expiry = datetime.now() + timedelta(minutes=1)
+            session_expiry = datetime.now() + timedelta(hours=3)
             update_user(user_id, {"session_expiry": session_expiry.timestamp()})
             await message.reply_text(
                 "Added 3 hours of usage token! subscribe to premium on just 50 rs for more features.",
@@ -49,10 +49,12 @@ async def start_command(client, message):
         "Hi! Send me a TeraBox link, and I'll generate a direct download link for you!\n\n"
         "Refer the bot to 5 users and get free premium access for 3 hours\n"
         "Purchase premium for more premium features Click subscribe premium to know about premium features.\n\n"
-        "Refresh token if your token is expired.\n",
+        "Refresh token if your token is expired.\n"
+        "Report issues at [support chat](https://t.me/+I7lL7lVhDGAzMjVl)",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium", callback_data="buy_premium")],
                     [InlineKeyboardButton("Refer for free premium", callback_data="referal")],
                     [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
                 ])
     )
+parse_mode=ParseMode.MARKDOWN

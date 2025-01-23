@@ -30,7 +30,7 @@ Tokens helps to connect your browser on bot to download terabox content.
 """,
         reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
-            [InlineKeyboardButton("What is token help", callback_data="get_token")],
+            [InlineKeyboardButton("What is token", callback_data="get_token")],
             [InlineKeyboardButton("Get token", url="https://modijiurl.com/o4MXhr")]
         ]
         ),
@@ -64,7 +64,7 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
 
 1. Choose your plan 
 2. Pay the money according to your premium plan
-3. Screenshot your payment and share it @Drxew or Our [Support Chat](https://t.me/+ejeH2w5gVSAzZmE1)
+3. Screenshot your payment and share it @Aiiwavn or Our [Support Chat](https://t.me/+I7lL7lVhDGAzMjVl)
 4. Wait till you get approved and enjoy using bot
                              """,
             reply_markup=InlineKeyboardMarkup(
@@ -84,7 +84,7 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
 
 1. Click the given upi id to copy it and paste it on your payment app.
 2. Pay the subscription amount 50 rs.
-3. After payment send screenshot to @Drxew or  [Support Chat](https://t.me/+ejeH2w5gVSAzZmE1)
+3. After payment send screenshot to @Aiiwavn or  [Support Chat](https://t.me/+I7lL7lVhDGAzMjVl)
 4. We will verify your payment and you will get notified after verification by bot. """,
     reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("🔙", callback_data="premium_steps")]]

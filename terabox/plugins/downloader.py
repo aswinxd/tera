@@ -41,7 +41,7 @@ This token is your access pass to the bot's premium features. By completing a si
 Tokens helps to connect your browser on bot to download terabox content""",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("subscribe Premium ₹50", callback_data="buy_premium")],
-                    [InlineKeyboardButton("What is token help", callback_data="get_token")],
+                    [InlineKeyboardButton("What is token", callback_data="get_token")],
                     [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
                 ])
             )
