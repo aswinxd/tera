@@ -47,13 +47,13 @@ async def start_command(client, message):
         update_user(user_id, {"session_expiry": 0, "referrals": 0, "referred_by": referred_by})
 
     await message.reply_text(
-    "Hi welcome to terabox downloader bot.\n"
-    "Send a TeraBox link, to start downloading\n"
-    "Refresh token if your token is expired.\n\n"
-    "Report issues at [support chat](https://t.me/+I7lL7lVhDGAzMjVl).",
+    "Hi welcome to terabox downloader bot. This tool helps you to download terabox content easily on telegram\n"
+    "•Send a TeraBox link, to start downloading\n"
+    "•Refresh token if your token is expired.\n"
+    "•Get 24 hour free token refering 5 people to this bot",
     reply_markup=InlineKeyboardMarkup([
-        [InlineKeyboardButton("Refer & Refresh", callback_data="referal")],
-        [InlineKeyboardButton("➕Add Me To Your Groups➕", url="https://t.me/TeraboxVideoDlRobot?startgroup=true")]
+        [InlineKeyboardButton("Refer 5 people for token", callback_data="referal")],
+        [InlineKeyboardButton("➕Add To Your Groups", url="https://t.me/TeraboxVideoDlRobot?startgroup=true")]
     ]),
     parse_mode=ParseMode.MARKDOWN
 )

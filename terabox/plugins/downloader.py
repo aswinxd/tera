@@ -4,6 +4,12 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime, timedelta
 from database import get_user, update_user
 
+@app.on_callback_query(filters.regex("get_alert"))
+async def on_callback_query(client, callback_query):
+    await callback_query.answer(
+        "Buy premium to download video directly to telegram", show_alert=True
+    )
+
 @app.on_message(filters.text)
 async def process_terabox_link(client, message):
     user_id = message.from_user.id
@@ -17,8 +23,8 @@ async def process_terabox_link(client, message):
             await message.reply_text("Here is your direct download link\n Click below button to get it 👇.",
                                       reply_markup=InlineKeyboardMarkup(
                                        [
-                                          [InlineKeyboardButton("Direct Download Link", url=f"{direct_link}")],
-                                          [InlineKeyboardButton("Get it on telegram", callback_data="processing_query")]
+                                          [InlineKeyboardButton("Watch online / download link", url=f"{direct_link}")],
+                                          [InlineKeyboardButton("Get video in telegram", callback_data="get_alert")]
                                        ]
                                  )
                            )
@@ -39,18 +45,13 @@ This token is your access pass to the bot's premium features. By completing a si
 💡 Why tokens?
 
 Tokens helps to connect your browser on bot to download terabox content""",
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")]
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                    [InlineKeyboardButton("Refresh token", url="https://modijiurl.com/o4MXhr")],
+                    [InlineKeyboardButton("Tutorial video", url="https://t.me/TeraboxHelpChannel/3")]
                 ])
             )
     else:
         await message.reply_text("The link is invalid or broken bot cant find a terabox content on that link")
 
 
-@app.on_callback_query()
-async def hle_callback_query(client, callback_query):
-    data = callback_query.data
-    if data == "processing_query":
-        await callback_query.answer(
-            "Processing query. Available only for premium users.", show_alert=True
-        )
