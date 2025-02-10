@@ -75,7 +75,7 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
 
 1. Click the given upi id to copy it and paste it on your payment app.
 2. Pay the subscription amount 50 rs.
-3. After payment send screenshot to @Aiiwavn or  [Support Chat](https://t.me/+I7lL7lVhDGAzMjVl)
+3. After payment send screenshot to admin
 4. We will verify your payment and you will get notified after verification by bot. """,
     reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("🔙", callback_data="premium_steps")]]
