@@ -55,7 +55,7 @@ We Accept Upi, Coffiee, Cryto & Telegram stars as payment methord
 
 1. Choose your plan 
 2. Pay the money according to your premium plan
-3. Screenshot your payment and share it @Aiiwavn or Our [Support Chat](https://t.me/+I7lL7lVhDGAzMjVl)
+3. Screenshot your payment and share it
 4. Wait till you get approved and enjoy using bot
                              """,
             reply_markup=InlineKeyboardMarkup(
